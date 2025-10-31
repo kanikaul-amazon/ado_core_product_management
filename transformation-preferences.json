@@ -1,0 +1,25 @@
+{
+  "Transformations": {
+    "DatabaseModernization": {
+      "Enabled": true,
+      "ConnectorId": "7ac5fa7c-9962-47ee-ae99-d41a9c24bde8",
+      "Databases": [
+        {
+          "Source": {
+            "Name": "ProductManagement",
+            "Version": "2019"
+          },
+          "Target": {
+            "Name": "postgres",
+            "Version": "13"
+          },
+          "DmsArn": "arn:aws:dms:eu-central-1:716608655211:migration-project:HIS7APLP7NDIBAKGGQLSRHAQLQ"
+        }
+      ]
+    }
+  },
+  "Metadata": {
+    "GeneratedAt": "2025-10-31T23:04:30.5131566Z",
+    "Version": "1.0"
+  }
+}
