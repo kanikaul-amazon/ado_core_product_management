@@ -1,0 +1,68 @@
+{
+  "conversion_metadata": {
+    "database_source": "Microsoft SQL Server 2019",
+    "database_target": "PostgreSQL 13",
+    "conversion_date": "2025-01-05",
+    "dms_migration_project": "arn:aws:dms:us-east-1:670339745378:migration-project:G6OBNSM5ABD4XMVGZ76UN2MREY",
+    "total_statements": 7
+  },
+  "conversions": [
+    {
+      "method_name": "GetAllProductsAsync",
+      "conversion_status": "success",
+      "conversion_method": "DMS",
+      "schema_changes": {"Products": "productmanagement_dbo.products"}
+    },
+    {
+      "method_name": "GetProductByIdAsync",
+      "conversion_status": "success",
+      "conversion_method": "DMS",
+      "schema_changes": {"Products": "productmanagement_dbo.products"}
+    },
+    {
+      "method_name": "InsertProductAsync",
+      "conversion_status": "manual",
+      "conversion_method": "Manual - DMS returned simplified conversion",
+      "schema_changes": {
+        "Products": "productmanagement_dbo.products",
+        "ProductHistory": "productmanagement_dbo.producthistory",
+        "ProductStats": "productmanagement_dbo.productstats"
+      },
+      "notes": "Transaction block simplified to use RETURNING clause. See manual_conversion_notes.md"
+    },
+    {
+      "method_name": "UpdateProductAsync",
+      "conversion_status": "manual",
+      "conversion_method": "Manual - DMS returned simplified conversion",
+      "schema_changes": {
+        "Products": "productmanagement_dbo.products",
+        "ProductHistory": "productmanagement_dbo.producthistory",
+        "ProductStats": "productmanagement_dbo.productstats"
+      },
+      "notes": "Transaction block converted using CTE. See manual_conversion_notes.md"
+    },
+    {
+      "method_name": "DeleteProductAsync",
+      "conversion_status": "manual",
+      "conversion_method": "Manual - DMS returned simplified conversion",
+      "schema_changes": {
+        "Products": "productmanagement_dbo.products",
+        "ProductHistory": "productmanagement_dbo.producthistory",
+        "ProductStats": "productmanagement_dbo.productstats"
+      },
+      "notes": "Transaction block converted using DELETE...RETURNING. See manual_conversion_notes.md"
+    },
+    {
+      "method_name": "GetProductsByPriceRangeAsync",
+      "conversion_status": "success",
+      "conversion_method": "DMS",
+      "schema_changes": {"Products": "productmanagement_dbo.products"}
+    },
+    {
+      "method_name": "GetLowStockProductsAsync",
+      "conversion_status": "success",
+      "conversion_method": "DMS",
+      "schema_changes": {"Products": "productmanagement_dbo.products"}
+    }
+  ]
+}
